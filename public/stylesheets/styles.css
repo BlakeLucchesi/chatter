@@ -1,0 +1,14 @@
+body {
+  font-family: "Lucida Grande";
+  font-size: 12px;
+}
+
+#messages .author {
+  color: #222;
+  font
+}
+#messages .body {
+  font-size: 14px;
+  font-family: "Lucida Grande";
+  color: #444;
+}

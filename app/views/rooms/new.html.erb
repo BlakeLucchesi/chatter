@@ -1,0 +1,16 @@
+<h2>New Chat Room</h2>
+
+<%= form_for :room, @room, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %>
+  
+  <div>
+    <%= label_tag('Title')%>
+    <%= f.text_field(:title) %>
+  </div>
+  
+  <div>
+    <%= label_tag("Description")%>
+    <%= f.text_field(:description) %>    
+  </div>
+  
+  <%= submit_tag("Create Room") %>
+<% end %>

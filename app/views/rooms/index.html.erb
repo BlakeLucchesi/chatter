@@ -1,0 +1,10 @@
+<h2>Chat Rooms</h3>
+  
+<div id="rooms">
+  <% @rooms.each do |room| %>
+    <div class="room">
+      <h3><%= link_to room.title, room %></h3>
+      <div class="description"><%= room.description %></div>
+    </div>
+  <% end %>
+</div>
