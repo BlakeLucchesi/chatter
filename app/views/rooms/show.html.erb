@@ -3,14 +3,18 @@
   <div id="description"><%= @room.description %></div>
 </div>
 
-<% form_for :message, @message, :url => { :controller => "messages", :action => "create" } do |f| %>
-  <%= f.text_field(:body) %>
-  <%= submit_tag("Send")%>
-<% end %>
+<div id="chatbox">
+  <% form_for :message, @message, :url => { :controller => "messages", :action => "create" } do |f| %>
+    <%= f.text_field(:body) %>
+    <%= submit_tag("Send")%>
+  <% end %>
+</div>
 
-<% @room.messages.reverse.each do |message| %>
-  <div class="message">
-    <div class="author"><%= message.author %></div>
-    <div class="body"><%= message.body %></div>
-  </div>
-<% end %>
+<div id="messages">
+  <% @room.messages.reverse.each do |message| %>
+    <div class="message">
+      <div class="author"><%= message.author %></div>
+      <div class="body"><%= message.body %></div>
+    </div>
+  <% end %>
+</div>

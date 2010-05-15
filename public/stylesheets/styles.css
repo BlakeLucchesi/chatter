@@ -1,11 +1,70 @@
 body {
   font-family: "Lucida Grande";
   font-size: 12px;
+  background-color: #333;
 }
 
+a {
+  color: #900;
+}
+a:hover {
+  text-decoration: none;
+}
+a:visited {
+  color: #C00;
+}
+
+#navigation a {
+  color: #444;
+}
+
+#wrapper {
+  width: 90%;
+  border-color: #999;
+  background-color: #FFF;
+}
+#wrapper-inner {
+  padding: 15px;
+}
+
+/** Rooms Homepage **/
+#rooms .room {
+  border-bottom: 1px solid #EEE;
+  padding: 4px;
+  margin: 0 0 8px 0;
+}
+#rooms h3 {
+  margin: 0 0 2px 0;
+}
+
+
+/** Chat Room **/
+#room-header h2 {
+  margin-bottom: 2px;
+}
+
+#chatbox {
+  border: 1px solid #EEE;
+  background-color: #FFFEEE;
+  padding: 4px;
+  margin: 10px 0;
+}
+#chatbox input[type=text] {
+  width: 90%;
+}
+#messages .message {
+  border-bottom: 1px solid #CCC;
+  border-top: 1px solid #FFF;
+}
+#messages .message div {
+  padding: 8px;
+  background-color: #F9F9F9;
+}
 #messages .author {
   color: #222;
-  font
+  float: left;
+  width: 120px;
+  background-color: #FFF;
 }
 #messages .body {
   font-size: 14px;

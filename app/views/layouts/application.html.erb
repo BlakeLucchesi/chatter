@@ -9,9 +9,15 @@
 </head>
 <body>
 
-<div id="navigation"><%= link_to "Chat Rooms", "/rooms" %></div>
+<div id="wrapper"><div id="wrapper-inner">
+  <div id="logo"></div>
+  <div id="navigation">
+    <%= link_to "Chat Rooms", "/rooms" %> :: <%= link_to "Create Room", '/rooms/new' %> :: <%= link_to "Logout", "/logout" %>
+  </div>
 
-<%= yield %>
+  <%= yield %>
+
+</div></div>
 
 </body>
 </html>
