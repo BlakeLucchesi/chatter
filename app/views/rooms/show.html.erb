@@ -13,7 +13,7 @@
 <div id="messages">
   <% @room.messages.reverse.each do |message| %>
     <div class="message">
-      <div class="author"><%= message.author %></div>
+      <div class="author"><%= message.author ? message.author.capitalize : "Anonymous" %>:</div>
       <div class="body"><%= message.body %></div>
     </div>
   <% end %>
