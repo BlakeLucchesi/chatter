@@ -1,10 +1,12 @@
 require 'test_helper'
 
-class RoomsTest < ActiveSupport::TestCase
+class RoomTest < ActiveSupport::TestCase
   # Replace this with your real tests.
 
-  test "create a new room"
+  test "create a new room" do
     @room = Room.new({:title => 'New Room', :description => 'This is a room description'})
-    assert_true @room.save, 'Cannot create new room.'
+    assert @room.save, 'Cannot create new room.'
   end
+  
+  
 end

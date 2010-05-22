@@ -1,0 +1,5 @@
+<div id="<%= message.id %>" class="message <%= message.author == 'blake' ? 'highlight' : '' %>">
+  <div class="date"><%= message.created %></div>
+  <div class="author"><%= message.author ? message.author.capitalize : "Anonymous" %>:</div>
+  <div class="body"><%= message.body %></div>
+</div>

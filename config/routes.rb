@@ -58,5 +58,6 @@ Chat::Application.routes.draw do |map|
   
   resources :rooms
   resources :messages
+  match 'rooms/:id/update' => 'rooms#update'
   root :to => "rooms#index"
 end

@@ -13,11 +13,13 @@ class MessagesController < ApplicationController
   end
   
   def create
-    @room = Room.find("4bee429247a5651708000003")
+    @room = Room.find(params[:room_id])
     params[:message][:author] = "blake"   
-    @room.messages.create(params[:message])
-    # @room.save
-    redirect_to @room
+    @message = @room.messages.create(params[:message])
+    respond_to do |format|
+      format.html { redirect_to @room }
+      format.js
+    end
   end
   
 end

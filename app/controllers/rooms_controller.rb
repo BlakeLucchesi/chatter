@@ -21,5 +21,17 @@ class RoomsController < ApplicationController
       render :action => "new"
     end
   end
+
+  def update
+    @room = Room.find(params[:id])
+    @messages = @room.updates(params[:message_id])
+    render :partial => @messages
+  end
+
+  private
+    
+    def get_user
+      @user = session[:user]
+    end
   
 end

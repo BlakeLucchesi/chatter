@@ -1,20 +1,20 @@
 <div id="room-header">
   <h2><%= @room.title %></h2>
-  <div id="description"><%= @room.description %></div>
+  <div class="description"><%= @room.description %></div>
+</div>
+
+<div id="messages">
+  <%= render :partial => @room.messages %>
 </div>
 
 <div id="chatbox">
-  <% form_for :message, @message, :url => { :controller => "messages", :action => "create" } do |f| %>
-    <%= f.text_field(:body) %>
+  <% form_for @message, {:remote => TRUE, :url => { :controller => "messages", :action => "create" }} do |f| %>
+    <%= f.text_field(:body, :autocomplete => :off) %>
+    <input type="hidden" name="room_id" value="<%= @room.id %>" />
     <%= submit_tag("Send")%>
   <% end %>
 </div>
 
-<div id="messages">
-  <% @room.messages.reverse.each do |message| %>
-    <div class="message">
-      <div class="author"><%= message.author ? message.author.capitalize : "Anonymous" %>:</div>
-      <div class="body"><%= message.body %></div>
-    </div>
-  <% end %>
-</div>
+<script>
+  Application.vars.room_id = "<%= @room.id %>";
+</script>
