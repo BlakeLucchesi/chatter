@@ -19,7 +19,9 @@ a:visited {
 }
 
 #wrapper {
-  width: 90%;
+  width: 99%;
+  min-height: 90%;
+  margin: 0 auto;
   border-color: #999;
   background-color: #FFF;
 }
@@ -39,8 +41,15 @@ a:visited {
 
 
 /** Chat Room **/
+#room-header {
+  padding: 0 4px 8px 6px;
+}
 #room-header h2 {
   margin-bottom: 2px;
+}
+#room-header .description {
+  font-style: italic;
+  color: #666;
 }
 
 #chatbox {
@@ -50,11 +59,18 @@ a:visited {
   margin: 10px 0;
 }
 #chatbox input[type=text] {
-  width: 90%;
+  width: 95%;
+}
+#messages {
+  overflow: auto;
+  border: 1px solid #DDD;
 }
 #messages .message {
   border-bottom: 1px solid #CCC;
   border-top: 1px solid #FFF;
+}
+#messages .highlight div {
+  background-color: #FFFEEE;
 }
 #messages .message div {
   padding: 8px;
@@ -70,4 +86,9 @@ a:visited {
   font-size: 14px;
   font-family: "Lucida Grande";
   color: #444;
+}
+#messages .date {
+  float: right;
+  color: #999;
+  font-size: 11px;
 }
