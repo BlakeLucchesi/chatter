@@ -49,3 +49,5 @@ module Chat
     config.filter_parameters += [:password]
   end
 end
+
+ActionView::Helpers::AssetTagHelper.register_javascript_expansion :jquery => %w(jquery jquery.periodicalupdater.js rails application)
