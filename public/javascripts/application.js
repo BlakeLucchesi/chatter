@@ -34,12 +34,12 @@ $(document).ready(function() {
 $(window).resize(resize_window);
 
 function resize_window() {
-  var hoffset = 120;
-  var height = $(window).height() - $('#room-header').height() - $('#chatbox').height() - hoffset;
+  var voffset = 120;
+  var height = $(window).height() - $('#room-header').height() - $('#chatbox').height() - voffset;
   $('#messages').css('height', height+'px');
   
-  var woffset = 130;
-  var width = $(window).width() - $('inpu[type=submit]', '#chatbox').width() - woffset;
+  var hoffset = 60;
+  var width = $('#chatbox').width() - hoffset;
   $('input[type=text]', '#chatbox').css('width', width+'px');
 }
 

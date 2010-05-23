@@ -52,6 +52,11 @@ a:visited {
   color: #666;
 }
 
+#room-main {
+  float: left;
+  width: 70%;
+}
+
 #chatbox {
   border: 1px solid #EEE;
   background-color: #FFFEEE;
@@ -92,3 +97,11 @@ a:visited {
   color: #999;
   font-size: 11px;
 }
+
+/** Sidebar **/
+#room-sidebar {
+  float: right;
+  width: 29%;
+}
+
+

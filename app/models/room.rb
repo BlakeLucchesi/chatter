@@ -6,7 +6,8 @@ class Room
   field :description
   
   embeds_many :messages
-
+  embeds_many :authors
+  
   validates_presence_of :title, :description
   validates_format_of :title, :with => /[A-Za-z]/
   validates_format_of :description, :with => /[A-Za-z]/

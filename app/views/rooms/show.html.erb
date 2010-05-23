@@ -3,16 +3,27 @@
   <div class="description"><%= @room.description %></div>
 </div>
 
-<div id="messages">
-  <%= render :partial => @room.messages %>
-</div>
+<div class="clearfix">
+  <div id="room-sidebar">
+    <div id="authors">
+      <%= render :partial => @room.authors %>
+      Blake
+    </div>
+  </div>
 
-<div id="chatbox">
-  <% form_for @message, {:remote => TRUE, :url => { :controller => "messages", :action => "create" }} do |f| %>
-    <%= f.text_field(:body, :autocomplete => :off) %>
-    <input type="hidden" name="room_id" value="<%= @room.id %>" />
-    <%= submit_tag("Send")%>
-  <% end %>
+  <div id="room-main">
+    <div id="messages">
+      <%= render :partial => @room.messages %>
+    </div>
+
+    <div id="chatbox">
+      <% form_for @message, {:remote => TRUE, :url => { :controller => "messages", :action => "create" }} do |f| %>
+        <%= f.text_field(:body, :autocomplete => :off) %>
+        <input type="hidden" name="room_id" value="<%= @room.id %>" />
+        <%= submit_tag("Send")%>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <script>
