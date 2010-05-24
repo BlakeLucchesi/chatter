@@ -13,7 +13,7 @@ $(document).ready(function() {
   
   // Poll for updates.
   if ($('#rooms-show').size() > 0 && running) {
-    $.PeriodicalUpdater('/rooms/'+Application.vars.room_id+'/update', {
+    $.PeriodicalUpdater('/rooms/'+Application.vars.room_id+'/updates', {
         method: 'get',          // method; get or post
           data: {message_id: get_last_id }, // array of values to be passed to the page - e.g. {name: "John", greeting: "hello"}
           minTimeout: 500,     // starting value for the timeout in milliseconds
@@ -34,7 +34,10 @@ $(document).ready(function() {
 $(window).resize(resize_window);
 
 function resize_window() {
-  var voffset = 120;
+  var sideoffset = 70;
+  $('#room-main').width($('#wrapper').width() - $('#room-sidebar').width() - sideoffset+'px');
+
+  var voffset = 160;
   var height = $(window).height() - $('#room-header').height() - $('#chatbox').height() - voffset;
   $('#messages').css('height', height+'px');
   

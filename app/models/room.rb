@@ -4,9 +4,9 @@ class Room
     
   field :title
   field :description
+  field :authors, :type => Array
   
   embeds_many :messages
-  embeds_many :authors
   
   validates_presence_of :title, :description
   validates_format_of :title, :with => /[A-Za-z]/
@@ -25,6 +25,16 @@ class Room
   def add_welcome
     defaults = {:author => "ChitChat Team", :body => "Welcome to your new chatroom"}
     self.messages.create(defaults)
+    self.authors = []
+  end
+
+  def add_author(name)
+    if self.authors.is_a?Array
+      self.authors.push(name)
+    else
+      self.authors = ["#{name}"]
+    end
+    self.save
   end
 
 end

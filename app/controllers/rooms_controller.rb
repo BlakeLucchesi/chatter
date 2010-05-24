@@ -7,6 +7,7 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     @message = Message.new
+    redirect_to "/rooms/enter/#{@room.id}" unless ! session[:name].nil?
   end
 
   def new
@@ -22,16 +23,25 @@ class RoomsController < ApplicationController
     end
   end
 
-  def update
+  def updates
     @room = Room.find(params[:id])
     @messages = @room.updates(params[:message_id])
     render :partial => @messages
   end
-
-  private
-    
-    def get_user
-      @user = session[:user]
-    end
   
+  def enter
+    @room = Room.find(params[:id])
+    
+    if params[:name]
+      @room.add_author(params[:name])
+      session[:name] = params[:name]
+      redirect_to @room
+    end
+  end
+  
+  def logout
+    session[:name] = nil
+    redirect_to :root
+  end
+
 end

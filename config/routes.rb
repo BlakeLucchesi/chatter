@@ -1,4 +1,4 @@
-Chat::Application.routes.draw do |map|
+Chatter::Application.routes.draw do |map|
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -58,6 +58,8 @@ Chat::Application.routes.draw do |map|
   
   resources :rooms
   resources :messages
-  match 'rooms/:id/update' => 'rooms#update'
+  match 'rooms/enter/:id' => 'rooms#enter'
+  match 'rooms/:id/updates' => 'rooms#updates'
+  match 'rooms/:id/logout' => 'rooms#logout'
   root :to => "rooms#index"
 end

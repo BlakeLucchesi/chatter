@@ -1,0 +1,6 @@
+<h3>Enter</h3>
+<%= form_tag :method => "post" do %>
+  <%= label_tag(:name, "Please enter your name:")%>
+  <%= text_field_tag(:name) %>
+  <%= submit_tag("Enter") %>
+<% end %>

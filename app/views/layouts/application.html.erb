@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chat App</title>
+  <title>Chatter App</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :jquery %>
   <%= csrf_meta_tag %>
 </head>
 <body id="<%= body_id %>" class="<%= body_classes %>">
 
-<div id="wrapper"><div id="wrapper-inner">
-  <div id="logo"></div>
+<div id="wrapper"><div id="wrapper-inner" class="clearfix">
+  <div id="logo">
+    <h1><%= link_to 'ChatterApp', :root %></h1>
+  </div>
   <div id="navigation">
-    <%= link_to "Chat Rooms", "/rooms" %> :: <%= link_to "Create Room", '/rooms/new' %> :: <%= link_to "Logout", "/logout" %>
+    <%= link_to "Chat Rooms", "/rooms" %> :: <%= link_to "Create Room", '/rooms/new' %>
   </div>
 
   <%= yield %>

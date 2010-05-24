@@ -4,15 +4,9 @@ body {
   background-color: #333;
 }
 
-a {
-  color: #900;
-}
-a:hover {
-  text-decoration: none;
-}
-a:visited {
-  color: #C00;
-}
+a { color: #900; }
+a:hover { text-decoration: none; }
+a:visited { color: #C00; }
 
 #navigation a {
   color: #444;
@@ -101,7 +95,33 @@ a:visited {
 /** Sidebar **/
 #room-sidebar {
   float: right;
-  width: 29%;
+  width: 240px;
+  margin-left: 15px;
+  border: 1px solid #CCC;
+  background-color: #F6F6F6;
+}
+#room-sidebar-inner {
+  padding: 5px 15px;
 }
 
-
+/** ClearFix **/
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}

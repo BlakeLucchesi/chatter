@@ -8,11 +8,11 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: chat_development
+  database: chatter_development
 
 test:
   <<: *defaults
-  database: chat_test
+  database: chatter_test
 
 # set these environment variables on your prod server
 production:

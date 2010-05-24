@@ -3,28 +3,30 @@
   <div class="description"><%= @room.description %></div>
 </div>
 
-<div class="clearfix">
-  <div id="room-sidebar">
-    <div id="authors">
-      <%= render :partial => @room.authors %>
-      Blake
-    </div>
+<div id="room-sidebar"><div id="room-sidebar-inner">
+  <div id="authors">
+    <h3>Participants</h3>
+    <ul>
+      <%= render :partial => "author", :collection => @room.authors %>
+    </ul>
+    <%= link_to "Logout", "/rooms/#{@room.id}/logout" %>
+  </div>
+</div></div>
+
+<div id="room-main">
+  <div id="messages">
+    <%= render :partial => @room.messages %>
   </div>
 
-  <div id="room-main">
-    <div id="messages">
-      <%= render :partial => @room.messages %>
-    </div>
-
-    <div id="chatbox">
-      <% form_for @message, {:remote => TRUE, :url => { :controller => "messages", :action => "create" }} do |f| %>
-        <%= f.text_field(:body, :autocomplete => :off) %>
-        <input type="hidden" name="room_id" value="<%= @room.id %>" />
-        <%= submit_tag("Send")%>
-      <% end %>
-    </div>
+  <div id="chatbox">
+    <% form_for @message, {:remote => TRUE, :url => { :controller => "messages", :action => "create" }} do |f| %>
+      <%= f.text_field(:body, :autocomplete => :off) %>
+      <input type="hidden" name="room_id" value="<%= @room.id %>" />
+      <%= submit_tag("Send")%>
+    <% end %>
   </div>
 </div>
+
 
 <script>
   Application.vars.room_id = "<%= @room.id %>";
