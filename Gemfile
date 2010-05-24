@@ -15,7 +15,6 @@ gem 'rails', '3.0.0.beta3'
 gem "mongo"
 gem "mongoid", "2.0.0.beta6"
 gem "bson_ext"
-gem "capistrano_rsync_with_remote_cache"
 
 # Bundle the extra gems:
 # gem 'bj'
