@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
     if (session[:name].nil?)
       redirect_to "/rooms/enter/#{@room.id}"
     else
-      render :layout => 'application'
+      render :layout => 'fluid'
     end
   end
 
