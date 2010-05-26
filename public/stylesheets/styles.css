@@ -2,6 +2,8 @@ body {
   font-family: "Lucida Grande";
   font-size: 12px;
   background-color: #333;
+  height: 100%;
+  width: 99%;
 }
 
 a { color: #900; }
@@ -109,16 +111,16 @@ h2 {
 #messages .author {
   color: #222;
   float: left;
-  width: 120px;
+  width: 100px;
 }
 #messages .body {
   font-size: 14px;
   font-family: "Lucida Grande";
   color: #444;
-  margin: 0 90px 0 130px;
+  margin: 0 103px 0 108px;
 }
 #messages .date {
-  width: 90px;
+  width: 95px;
   float: right;
   color: #999;
   font-size: 11px;
