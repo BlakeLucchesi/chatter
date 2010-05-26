@@ -98,26 +98,27 @@ h2 {
 #messages .message {
   border-bottom: 1px solid #CCC;
   border-top: 1px solid #FFF;
+  background-color: #F9F9F9;
 }
 #messages .highlight div {
   background-color: #FFFEEE;
 }
 #messages .message div {
   padding: 8px;
-  background-color: #F9F9F9;
 }
 #messages .author {
   color: #222;
   float: left;
   width: 120px;
-  background-color: #FFF;
 }
 #messages .body {
   font-size: 14px;
   font-family: "Lucida Grande";
   color: #444;
+  margin: 0 90px 0 130px;
 }
 #messages .date {
+  width: 90px;
   float: right;
   color: #999;
   font-size: 11px;
