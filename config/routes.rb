@@ -61,5 +61,5 @@ Chatter::Application.routes.draw do |map|
   match 'rooms/enter/:id' => 'rooms#enter'
   match 'rooms/:id/updates' => 'rooms#updates'
   match 'rooms/:id/logout' => 'rooms#logout'
-  root :to => "rooms#index"
+  root :to => "rooms#new"
 end

@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
     
   def create
     @room = Room.find(params[:room_id])
-    params[:message][:author] = session[:name]
+    params[:message][:author] = session[@room.id][:name]
     @message = @room.messages.create(params[:message])
     respond_to do |format|
       format.html { redirect_to @room }

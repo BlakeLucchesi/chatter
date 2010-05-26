@@ -1,16 +1,26 @@
-<h2>New Chat Room</h2>
+<h2>Create New Chat Room</h2>
 
-<%= form_for :room, @room, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %>
-  
-  <div>
-    <%= label_tag('Title')%>
-    <%= f.text_field(:title) %>
-  </div>
-  
-  <div>
-    <%= label_tag("Description")%>
-    <%= f.text_field(:description) %>    
-  </div>
-  
-  <%= submit_tag("Create Room") %>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
 <% end %>
+
+<div id="new-form">
+  <%= form_for @room, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %>
+
+    <div class="form-item">
+      <%= label_tag('Chat Topic:') %>
+      <%= f.text_field(:title) %>
+    </div>
+
+    <div class="form-item checkbox">
+      <label>Private: <%= f.check_box(:private) %></label>
+      <%= f.password_field(:password) %>
+    </div>
+
+    <%= submit_tag("Create Room") %>
+  <% end %>
+</div>
+
+<div id="new-help">
+  <p>This is a description about the service.</p>
+</div>

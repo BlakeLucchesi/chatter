@@ -3,15 +3,17 @@ class Room
   include Mongoid::Timestamps
     
   field :title
-  field :description
+  field :private, :type => Boolean
+  field :password
   field :authors, :type => Array
   
   embeds_many :messages
   
-  validates_presence_of :title, :description
-  validates_format_of :title, :with => /[A-Za-z]/
-  validates_format_of :description, :with => /[A-Za-z]/
-
+  validates_presence_of :title
+  validates_format_of :title, :with => /[A-Za-z0-9]/
+  validates_presence_of :password, :if => :private
+  validates_length_of :title, :in => 3..32
+  
   after_create :add_welcome
 
   def updates(message_id)
@@ -35,6 +37,10 @@ class Room
       self.authors = ["#{name}"]
     end
     self.save
+  end
+
+  def check_password(password = nil)
+    self.password == password ? true : false
   end
 
 end

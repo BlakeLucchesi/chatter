@@ -29,6 +29,12 @@ $(document).ready(function() {
       }
     });
   }
+  
+  
+  $('#room_password').hide().val('Room password');
+  // $('#private').change(function() {
+  //   $(this).attr('checked');
+  // });
 });
 
 $(window).resize(resize_window);

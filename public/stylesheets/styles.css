@@ -14,6 +14,8 @@ h2 {
   margin: 0 0 1em 0;
 }
 
+div.fieldWithErrors { display: inline; }
+
 #navigation a {
   color: #444;
 }
@@ -40,7 +42,24 @@ h2 {
   display: block;
 }
 
-/** Rooms Homepage **/
+/** Homepage **/
+.notice { margin: 15px 0; border: 1px solid #eee; background-color: #FFFCCC; padding: 5px; }
+.form-item { margin-bottom: 10px; }
+
+label { font-weight: bold; margin-right: 4px; }
+
+#new-help {
+  margin: 20px 0;
+  padding: 15px 0;
+  border-top: 1px dashed #DDD;
+  color: #555;
+  font-size: 11px;
+  font-style: italic;
+}
+
+#new-help p { margin-top: 0; }
+
+/** Rooms Index **/
 #rooms .room {
   border-bottom: 1px solid #EEE;
   padding: 4px;
@@ -52,14 +71,9 @@ h2 {
 
 /** Enter **/
 #enter {
-  text-align: center;
   width: 100%;
 }
-#enter h3 {
-  margin: 0;
-}
 #enter #description {
-  text-align: center;
   padding: 0 25px;
   color: #999;
   font-style: italic;

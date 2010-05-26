@@ -1,10 +1,22 @@
 <div id="enter">
   <h3 class="title">Entering chat room: <%= @room.title %></h3>
-  <div id="description"><%= @room.description %></div>
 
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end%>
+  
   <%= form_tag :method => "post" do %>
-    <%= label_tag(:name, "Please enter your name:")%><br />
-    <%= text_field_tag(:name) %>
+    
+    <div class="form-item">
+      <%= label_tag(:name, "Your name:")%> <%= text_field_tag(:name) %>
+    </div>
+    
+    <div class="form-item">
+      <% if @room.private %>
+        <%= label_tag(:password, 'Password:') %> <%= password_field_tag(:password) %>
+      <% end %>
+    </div>
+    
     <%= submit_tag("Enter") %>
   <% end %>
 </div>
