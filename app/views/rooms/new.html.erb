@@ -14,7 +14,7 @@
 
     <div class="form-item checkbox">
       <label>Private: <%= f.check_box(:private) %></label>
-      <%= f.password_field(:password) %>
+      <%= text_field_tag(:password_label, '', :size => 15) %> <%= f.password_field(:password, :size => 15) %>
     </div>
 
     <%= submit_tag("Create Room") %>

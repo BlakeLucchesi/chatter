@@ -3,7 +3,6 @@
 <head>
   <title>Chatter App</title>
   <%= stylesheet_link_tag %w(styles mini) %>
-  <%= javascript_include_tag :jquery %>
   <%= csrf_meta_tag %>
 </head>
 <body id="<%= body_id %>" class="<%= body_classes %>">
@@ -17,6 +16,8 @@
   </div></div>
 
   <%= render :partial => 'layouts/footer' %>
+
+  <%= javascript_include_tag :jquery %>
 
 </body>
 </html>

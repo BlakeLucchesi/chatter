@@ -4,15 +4,36 @@ var Application = { vars: {} }
 
 var running = true;
 
-$(document).ready(function() {
+$().ready(function() {
   
   // Setup the window.
   $('input[type=text]', '#chatbox').focus();
-  scroll_bottom();
-  resize_window();
+
+  $('#room_password').hide();
+  $('#password_label').hide().val('Enter password').focus(function() {
+    $(this).hide();
+    $('#room_password').show().focus();
+  });
+  $('#room_private').change(function() {
+    if (this.checked) {
+      $('#password_label').show();
+      $('#room_password').hide();
+    }
+    else {
+      $('#password_label').hide();
+      $('#room_password').hide();
+    }
+  })[0].checked = false; // Always reset to unchecked for when we fail validation.
   
   // Poll for updates.
   if ($('#rooms-show').size() > 0 && running) {
+    
+    // Listen for window resizing
+    $(window).resize(resize_window);
+    resize_window();
+    scroll_bottom();
+    
+    // Poll for updates
     $.PeriodicalUpdater('/rooms/'+Application.vars.room_id+'/updates', {
         method: 'get',          // method; get or post
           data: {message_id: get_last_id }, // array of values to be passed to the page - e.g. {name: "John", greeting: "hello"}
@@ -29,15 +50,7 @@ $(document).ready(function() {
       }
     });
   }
-  
-  
-  $('#room_password').hide().val('Room password');
-  // $('#private').change(function() {
-  //   $(this).attr('checked');
-  // });
 });
-
-$(window).resize(resize_window);
 
 function resize_window() {
   var sideoffset = 70;

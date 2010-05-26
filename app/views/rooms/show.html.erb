@@ -26,7 +26,6 @@
   </div>
 </div>
 
-
-<script>
-  Application.vars.room_id = "<%= @room.id %>";
-</script>
+<% content_for :js do %>
+  <script>Application.vars.room_id = "<%= @room.id %>";</script>
+<% end %>
