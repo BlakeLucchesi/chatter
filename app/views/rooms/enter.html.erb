@@ -1,6 +1,10 @@
-<h3>Enter</h3>
-<%= form_tag :method => "post" do %>
-  <%= label_tag(:name, "Please enter your name:")%>
-  <%= text_field_tag(:name) %>
-  <%= submit_tag("Enter") %>
-<% end %>
+<div id="enter">
+  <h3 class="title">Entering chat room: <%= @room.title %></h3>
+  <div id="description"><%= @room.description %></div>
+
+  <%= form_tag :method => "post" do %>
+    <%= label_tag(:name, "Please enter your name:")%><br />
+    <%= text_field_tag(:name) %>
+    <%= submit_tag("Enter") %>
+  <% end %>
+</div>

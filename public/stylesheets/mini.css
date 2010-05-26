@@ -1,0 +1,14 @@
+body #wrapper,
+body #logo,
+body #footer {
+  width: 500px;
+  margin: 0 auto;
+}
+
+body #wrapper {
+  margin: 15px auto;
+}
+
+body #wrapper-inner {
+  padding: 20px 25px;
+}

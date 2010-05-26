@@ -7,7 +7,11 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     @message = Message.new
-    redirect_to "/rooms/enter/#{@room.id}" unless ! session[:name].nil?
+    if (session[:name].nil?)
+      redirect_to "/rooms/enter/#{@room.id}"
+    else
+      render :layout => 'application'
+    end
   end
 
   def new

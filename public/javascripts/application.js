@@ -37,7 +37,7 @@ function resize_window() {
   var sideoffset = 70;
   $('#room-main').width($('#wrapper').width() - $('#room-sidebar').width() - sideoffset+'px');
 
-  var voffset = 160;
+  var voffset = 165;
   var height = $(window).height() - $('#room-header').height() - $('#chatbox').height() - voffset;
   $('#messages').css('height', height+'px');
   
