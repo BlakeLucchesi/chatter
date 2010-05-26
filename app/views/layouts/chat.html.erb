@@ -17,7 +17,7 @@
 
   <%= render :partial => 'layouts/footer' %>
 
-  <%= javascript_include_tag :jquery %>  
+  <%= javascript_include_tag :jquery, %w(chat) %>  
   <%= yield :js %>
     
 </body>
